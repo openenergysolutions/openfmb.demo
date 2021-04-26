@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  nats:
+    image: nats
+    network: openfmb
+  solar:
+    image: openfmb.adapters
+    network: openfmb
+  load:
+    image: openfmb.adapters
+    network: openfmb
+  ess:
+    image: openfmb.adapters
+    network: openfmb
+  breaker:
+    image: openfmb.adapters
+    network: openfmb
+  hmi:
+    image: openfmb.hmi
+    network: openfmb
+
