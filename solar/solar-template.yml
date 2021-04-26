@@ -1,0 +1,2227 @@
+name: '?'
+polls:
+- name: integrity_poll
+  interval-ms: 1000
+  classes:
+    class0: true
+    class1: false
+    class2: false
+    class3: false
+channel:
+  adapter: 0.0.0.0
+  outstation-ip: '?'
+  port: 20000
+protocol:
+  master-address: 1
+  outstation-address: 1024
+  startup-integrity:
+    class0: false
+    class1: false
+    class2: false
+    class3: false
+  unsolicited:
+    class1: false
+    class2: false
+    class3: false
+file:
+  id: openfmb-adapter-template
+  edition: 2.0
+  version: 1.0.0.0
+  plugin: dnp3-master
+profiles:
+- name: SolarReadingProfile
+  poll-name: integrity_poll
+  mapping:
+    readingMessageInfo:
+      messageInfo:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: generated_uuid
+          name:
+            value:
+              string-field-type: ignored
+        messageTimeStamp:
+          timestamp-field-type: message    
+    solarInverter:
+      conductingEquipment:
+        namedObject:
+          description:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: constant
+              value: '?'
+        mRID:
+          string-field-type: primary_uuid
+          value: 00000000-0000-0000-0000-000000000000
+    solarReading:
+      conductingEquipmentTerminalReading:
+        terminal:
+          aCDCTerminal:
+            identifiedObject:
+              description:
+                value:
+                  string-field-type: ignored
+              mRID:
+                value:
+                  string-field-type: ignored
+              name:
+                value:
+                  string-field-type: ignored
+            connected:
+              value:
+                bool-field-type: ignored
+            sequenceNumber:
+              value:
+                int32-field-type: ignored
+          phases:
+            value:
+              enum-field-type: ignored
+      phaseMMTN:
+        phsA:
+          logicalNode:
+            identifiedObject:
+              description:
+                value:
+                  string-field-type: ignored
+              mRID:
+                value:
+                  string-field-type: ignored
+              name:
+                value:
+                  string-field-type: ignored
+          DmdVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+        phsAB:
+          logicalNode:
+            identifiedObject:
+              description:
+                value:
+                  string-field-type: ignored
+              mRID:
+                value:
+                  string-field-type: ignored
+              name:
+                value:
+                  string-field-type: ignored
+          DmdVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+        phsB:
+          logicalNode:
+            identifiedObject:
+              description:
+                value:
+                  string-field-type: ignored
+              mRID:
+                value:
+                  string-field-type: ignored
+              name:
+                value:
+                  string-field-type: ignored
+          DmdVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+        phsBC:
+          logicalNode:
+            identifiedObject:
+              description:
+                value:
+                  string-field-type: ignored
+              mRID:
+                value:
+                  string-field-type: ignored
+              name:
+                value:
+                  string-field-type: ignored
+          DmdVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+        phsC:
+          logicalNode:
+            identifiedObject:
+              description:
+                value:
+                  string-field-type: ignored
+              mRID:
+                value:
+                  string-field-type: ignored
+              name:
+                value:
+                  string-field-type: ignored
+          DmdVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+        phsCA:
+          logicalNode:
+            identifiedObject:
+              description:
+                value:
+                  string-field-type: ignored
+              mRID:
+                value:
+                  string-field-type: ignored
+              name:
+                value:
+                  string-field-type: ignored
+          DmdVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          DmdWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          SupWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVAh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotVArh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+          TotWh:
+            actVal:
+              int64-field-type: mapped
+              source-type: none
+              index: 0
+              scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              value:
+                enum-field-type: ignored
+      readingMMTR:
+        logicalNode:
+          identifiedObject:
+            description:
+              value:
+                string-field-type: ignored
+            mRID:
+              value:
+                string-field-type: ignored
+            name:
+              value:
+                string-field-type: ignored
+        DmdVAh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+        DmdVArh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+        DmdWh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+        SupVAh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+        SupVArh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+        SupWh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+        TotVAh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+        TotVArh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+        TotWh:
+          actVal:
+            int64-field-type: mapped
+            source-type: none
+            index: 0
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            value:
+              enum-field-type: ignored
+      readingMMXU:
+        logicalNode:
+          identifiedObject:
+            description:
+              value:
+                string-field-type: ignored
+            mRID:
+              value:
+                string-field-type: ignored
+            name:
+              value:
+                string-field-type: ignored
+        A:
+          net:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: ignored
+              mag:
+                double-field-type: mapped
+                source-type: analog
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          neut:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsA:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: analog
+                index: 1
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsB:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: analog
+                index: 2
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsC:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: analog
+                index: 3
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+        ClcMth:
+          setVal:
+            enum-field-type: ignored
+        Hz:
+          mag:
+            double-field-type: mapped
+            source-type: analog
+            index: 5
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            multiplier:
+              value:
+                enum-field-type: ignored
+            SIUnit:
+              enum-field-type: ignored
+        PF:
+          net:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          neut:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsA:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsB:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsC:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+        PFSign:
+          setVal:
+            enum-field-type: ignored
+        PhV:
+          net:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          neut:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsA:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsB:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsC:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+        PPV:
+          phsAB:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsBC:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsCA:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+        VA:
+          net:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: analog
+                index: 6
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          neut:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsA:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsB:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsC:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+        VAr:
+          net:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: analog
+                index: 7
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          neut:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsA:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsB:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsC:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+        W:
+          net:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: analog
+                index: 4
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          neut:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsA:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsB:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+          phsC:
+            cVal:
+              ang:
+                value:
+                  source-type: none
+                  index: 0
+                  scale: 1
+                  double-field-type: mapped
+              mag:
+                double-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            q:
+              quality-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+            units:
+              multiplier:
+                value:
+                  enum-field-type: ignored
+              SIUnit:
+                enum-field-type: ignored
+- name: SolarStatusProfile
+  poll-name: integrity_poll
+  mapping:
+    statusMessageInfo:
+      messageInfo:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: generated_uuid
+          name:
+            value:
+              string-field-type: ignored
+        messageTimeStamp:
+          timestamp-field-type: message    
+    solarInverter:
+      conductingEquipment:
+        namedObject:
+          description:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: constant
+              value: '?'
+        mRID:
+          string-field-type: primary_uuid
+          value: 00000000-0000-0000-0000-000000000000
+    solarStatus:
+      statusValue:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: ignored
+        modBlk:
+          value:
+            bool-field-type: ignored
+      solarStatusZGEN:
+        solarEventAndStatusZGEN:
+          logicalNodeForEventAndStatus:
+            logicalNode:
+              identifiedObject:
+                description:
+                  value:
+                    string-field-type: ignored
+                mRID:
+                  value:
+                    string-field-type: ignored
+                name:
+                  value:
+                    string-field-type: ignored
+            Beh:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            EEHealth:
+              d:
+                value:
+                  string-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+            HotLineTag:
+              q:
+                quality-field-type: ignored
+              stVal:
+                bool-field-type: mapped
+                source-type: none
+              t:
+                timestamp-field-type: ignored
+            RemoteBlk:
+              q:
+                quality-field-type: ignored
+              stVal:
+                bool-field-type: mapped
+                source-type: none
+              t:
+                timestamp-field-type: ignored
+          AuxPwrSt:
+            q:
+              quality-field-type: ignored
+            stVal:
+              bool-field-type: mapped
+              source-type: none
+              index: 0
+            t:
+              timestamp-field-type: ignored
+          DynamicTest:
+            q:
+              quality-field-type: ignored
+            stVal:
+              enum-field-type: mapped
+              source-type: none
+              index: 0
+              when-true: DynamicTestKind_none
+              when-false: DynamicTestKind_testing
+            t:
+              timestamp-field-type: ignored
+          EmgStop:
+            q:
+              quality-field-type: ignored
+            stVal:
+              bool-field-type: mapped
+              source-type: none
+              index: 0
+            t:
+              timestamp-field-type: ignored
+          PointStatus:
+            frequencySetPointEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            mode:
+              setVal:
+                enum-field-type: mapped
+                source-type: none
+                index: 0
+                when-true: GridConnectModeKind_UNDEFINED
+                when-false: GridConnectModeKind_CSI
+              setValExtension:
+                value:
+                  string-field-type: ignored
+            pctHzDroop:
+              value:
+                float-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            pctVDroop:
+              value:
+                float-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            rampRates:
+              negativeReactivePowerKVArPerMin:
+                value:
+                  float-field-type: mapped
+                  source-type: none
+                  index: 0
+                  scale: 1
+              negativeRealPowerKWPerMin:
+                value:
+                  float-field-type: mapped
+                  source-type: none
+                  index: 0
+                  scale: 1
+              positiveReactivePowerKVArPerMin:
+                value:
+                  float-field-type: mapped
+                  source-type: none
+                  index: 0
+                  scale: 1
+              positiveRealPowerKWPerMin:
+                value:
+                  float-field-type: mapped
+                  source-type: none
+                  index: 0
+                  scale: 1
+            reactivePwrSetPointEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            realPwrSetPointEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            state:
+              value:
+                enum-field-type: mapped
+                source-type: analog
+                index: 8
+                mapping:
+                - name: StateKind_off
+                  value: 0
+                - name: StateKind_on
+                  value: 1
+                - name: StateKind_standby
+                  value: 2
+            voltageSetPointEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+        GriMod:
+          setVal:
+            enum-field-type: mapped
+            source-type: none
+            index: 0
+            when-true: GridConnectModeKind_UNDEFINED
+            when-false: GridConnectModeKind_CSI
+          setValExtension:
+            value:
+              string-field-type: ignored
+- name: SolarControlProfile
+  command-order:
+  - set-w-net-mag
+  - set-pf-net-mag
+  - execute-schedule-paramter
+  tolerance-ms: 5000
+  mapping:
+    controlMessageInfo:
+      messageInfo:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: generated_uuid
+          name:
+            value:
+              string-field-type: ignored
+        messageTimeStamp:
+          timestamp-field-type: message    
+    solarControl:
+      controlValue:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: ignored
+        modBlk:
+          value:
+            bool-field-type: ignored
+        reset:
+          value:
+            bool-field-type: ignored
+            when-true: []
+            when-false: []
+      check:
+        interlockCheck:
+          value:
+            bool-field-type: ignored
+            when-true:
+            - command-action-type: g12v1
+              index: 0
+              command-id: some-command-id
+              operation-type: LATCH_ON
+              trip-close-code: NUL
+              count: 1
+              on-time-ms: 1000
+              off-time-ms: 1000
+            when-false:
+            - command-action-type: g12v1
+              index: 0
+              command-id: some-command-id
+              operation-type: LATCH_OFF
+              trip-close-code: NUL
+              count: 1
+              on-time-ms: 1000
+              off-time-ms: 1000
+        synchroCheck:
+          value:
+            bool-field-type: ignored
+            when-true:
+            - command-action-type: g12v1
+              index: 0
+              command-id: some-command-id
+              operation-type: LATCH_ON
+              trip-close-code: NUL
+              count: 1
+              on-time-ms: 1000
+              off-time-ms: 1000
+            when-false:
+            - command-action-type: g12v1
+              index: 0
+              command-id: some-command-id
+              operation-type: LATCH_OFF
+              trip-close-code: NUL
+              count: 1
+              on-time-ms: 1000
+              off-time-ms: 1000
+      solarControlFSCC:
+        controlFSCC:
+          logicalNodeForControl:
+            logicalNode:
+              identifiedObject:
+                description:
+                  value:
+                    string-field-type: ignored
+                mRID:
+                  value:
+                    string-field-type: ignored
+                name:
+                  value:
+                    string-field-type: ignored
+          controlScheduleFSCH:
+            ValACSG:
+              schpts:
+              - scheduleParameter:
+                - scheduleParameterType: ScheduleParameterKind_PF_net_mag
+                  outputs:
+                  - command-id: set-pf-net-mag
+                    command-action-type: g41v1
+                    index: 1
+                    scale: 1
+                - scheduleParameterType: ScheduleParameterKind_W_net_mag
+                  outputs:
+                  - command-id: set-w-net-mag
+                    command-action-type: g41v1
+                    index: 0
+                    scale: 1
+                startTime:
+                  control-timestamp-field-type: ignored
+          islandControlScheduleFSCH:
+            ValACSG:
+              schpts: []
+        SolarControlScheduleFSCH:
+          ValDCSG:
+            crvpts:
+            - frequencySetPointEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              mode:
+                setVal:
+                  enum-field-type: ignored
+                setValExtension:
+                  value:
+                    string-field-type: ignored
+              pctHzDroop:
+                value:
+                  float-field-type: ignored
+                  outputs:
+                  - command-id: some-command-id
+                    command-action-type: g41v1
+                    index: 0
+                    scale: 1
+              pctVDroop:
+                value:
+                  float-field-type: ignored
+                  outputs:
+                  - command-id: some-command-id
+                    command-action-type: g41v1
+                    index: 0
+                    scale: 1
+              rampRates:
+                negativeReactivePowerKVArPerMin:
+                  value:
+                    float-field-type: ignored
+                    outputs:
+                    - command-id: some-command-id
+                      command-action-type: g41v1
+                      index: 0
+                      scale: 1
+                negativeRealPowerKWPerMin:
+                  value:
+                    float-field-type: ignored
+                    outputs:
+                    - command-id: some-command-id
+                      command-action-type: g41v1
+                      index: 0
+                      scale: 1
+                positiveReactivePowerKVArPerMin:
+                  value:
+                    float-field-type: ignored
+                    outputs:
+                    - command-id: some-command-id
+                      command-action-type: g41v1
+                      index: 0
+                      scale: 1
+                positiveRealPowerKWPerMin:
+                  value:
+                    float-field-type: ignored
+                    outputs:
+                    - command-id: some-command-id
+                      command-action-type: g41v1
+                      index: 0
+                      scale: 1
+              reactivePwrSetPointEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              realPwrSetPointEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              reset:
+                ctlVal:
+                  bool-field-type: ignored
+              state:
+                value:
+                  enum-field-type: mapped
+                  mapping:
+                  - name: StateKind_on
+                    outputs:
+                    - command-action-type: g41v1
+                      index: 2
+                      command-id: execute-schedule-paramter
+                      value: 1
+                  - name: StateKind_off
+                    outputs:
+                    - command-action-type: g41v1
+                      index: 2
+                      command-id: execute-schedule-paramter
+                      value: 0
+              voltageSetPointEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              startTime:
+                control-timestamp-field-type: ignored
+    solarInverter:
+      conductingEquipment:
+        namedObject:
+          description:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: constant
+              value: '?'
+        mRID:
+          string-field-type: primary_uuid
+          value: 00000000-0000-0000-0000-000000000000
+...

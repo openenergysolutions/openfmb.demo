@@ -1,0 +1,1150 @@
+name: '?'
+polls:
+- name: integrity_poll
+  interval-ms: 1000
+  classes:
+    class0: true
+    class1: false
+    class2: false
+    class3: false
+channel:
+  adapter: 0.0.0.0
+  outstation-ip: '?'
+  port: 20000
+protocol:
+  master-address: 1
+  outstation-address: 1024
+  startup-integrity:
+    class0: false
+    class1: false
+    class2: false
+    class3: false
+  unsolicited:
+    class1: false
+    class2: false
+    class3: false
+file:
+  id: openfmb-adapter-template
+  edition: 2.0
+  version: 1.0.0.0
+  plugin: dnp3-master
+profiles:
+- name: ESSStatusProfile
+  poll-name: integrity_poll
+  mapping:
+    statusMessageInfo:
+      messageInfo:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: generated_uuid
+          name:
+            value:
+              string-field-type: ignored
+        messageTimeStamp:
+          timestamp-field-type: message
+    ess:
+      conductingEquipment:
+        namedObject:
+          description:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: constant
+              value: '?'
+        mRID:
+          string-field-type: primary_uuid
+          value: 00000000-0000-0000-0000-000000000000
+    essStatus:
+      statusValue:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: ignored
+        modBlk:
+          value:
+            bool-field-type: mapped
+            source-type: none
+      essStatusZBAT:
+        logicalNodeForEventAndStatus:
+          logicalNode:
+            identifiedObject:
+              description:
+                value:
+                  string-field-type: ignored
+              mRID:
+                value:
+                  string-field-type: ignored
+              name:
+                value:
+                  string-field-type: ignored
+          Beh:
+            q:
+              quality-field-type: ignored
+            stVal:
+              enum-field-type: ignored
+            t:
+              timestamp-field-type: ignored
+          EEHealth:
+            d:
+              value:
+                string-field-type: ignored
+            stVal:
+              enum-field-type: ignored
+          HotLineTag:
+            q:
+              quality-field-type: ignored
+            stVal:
+              bool-field-type: mapped
+              source-type: none
+            t:
+              timestamp-field-type: ignored
+          RemoteBlk:
+            q:
+              quality-field-type: ignored
+            stVal:
+              bool-field-type: mapped
+              source-type: none
+            t:
+              timestamp-field-type: ignored
+        BatSt:
+          q:
+            quality-field-type: ignored
+          stVal:
+            bool-field-type: mapped
+            source-type: none
+            index: 0
+          t:
+            timestamp-field-type: ignored
+        GriMod:
+          setVal:
+            enum-field-type: mapped
+            source-type: none
+            index: 0
+            when-true: GridConnectModeKind_UNDEFINED
+            when-false: GridConnectModeKind_CSI
+          setValExtension:
+            value:
+              string-field-type: ignored
+        Soc:
+          mag:
+            double-field-type: mapped
+            source-type: analog
+            index: 29
+            scale: 1
+          q:
+            quality-field-type: ignored
+          t:
+            timestamp-field-type: ignored
+          units:
+            multiplier:
+              value:
+                enum-field-type: ignored
+            SIUnit:
+              enum-field-type: ignored
+        Stdby:
+          q:
+            quality-field-type: ignored
+          stVal:
+            bool-field-type: mapped
+            source-type: none
+            index: 0
+          t:
+            timestamp-field-type: ignored
+      essStatusZGEN:
+        eSSEventAndStatusZGEN:
+          logicalNodeForEventAndStatus:
+            logicalNode:
+              identifiedObject:
+                description:
+                  value:
+                    string-field-type: ignored
+                mRID:
+                  value:
+                    string-field-type: ignored
+                name:
+                  value:
+                    string-field-type: ignored
+            Beh:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            EEHealth:
+              d:
+                value:
+                  string-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+            HotLineTag:
+              q:
+                quality-field-type: ignored
+              stVal:
+                bool-field-type: mapped
+                source-type: none
+              t:
+                timestamp-field-type: ignored
+            RemoteBlk:
+              q:
+                quality-field-type: ignored
+              stVal:
+                bool-field-type: mapped
+                source-type: none
+              t:
+                timestamp-field-type: ignored
+          AuxPwrSt:
+            q:
+              quality-field-type: ignored
+            stVal:
+              bool-field-type: mapped
+              source-type: none
+              index: 0
+            t:
+              timestamp-field-type: ignored
+          DynamicTest:
+            q:
+              quality-field-type: ignored
+            stVal:
+              enum-field-type: mapped
+              source-type: none
+              index: 0
+              when-true: DynamicTestKind_none
+              when-false: DynamicTestKind_testing
+            t:
+              timestamp-field-type: ignored
+          EmgStop:
+            q:
+              quality-field-type: ignored
+            stVal:
+              bool-field-type: mapped
+              source-type: none
+              index: 0
+            t:
+              timestamp-field-type: ignored
+          GnSynSt:
+            q:
+              quality-field-type: ignored
+            stVal:
+              bool-field-type: mapped
+              source-type: binary
+              index: 0
+            t:
+              timestamp-field-type: ignored
+          PointStatus:
+            blackStartEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            frequencySetPointEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            function:
+              capacityFirming:
+                capacityFirmingCtl:
+                  value:
+                    bool-field-type: mapped
+                    source-type: none
+                    index: 0
+                limitNegative_dp_dt:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                limitPositive_dp_dt:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+              frequencyRegulation:
+                frequencyDeadBandMinus:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                frequencyDeadBandPlus:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                frequencyRegulationCtl:
+                  value:
+                    bool-field-type: mapped
+                    source-type: none
+                    index: 0
+                frequencySetPoint:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                gridFrequencyStableBandMinus:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                gridFrequencyStableBandPlus:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                overFrequencyDroop:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                underFrequencyDroop:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+              peakShaving:
+                baseShavingLimit:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                peakShavingCtl:
+                  value:
+                    bool-field-type: mapped
+                    source-type: none
+                    index: 0
+                peakShavingLimit:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                socManagementAllowedHighLimit:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                socManagementAllowedLowLimit:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+              socLimit:
+                socHighLimit:
+                  value:
+                    float-field-type: mapped
+                    source-type: analog
+                    index: 25
+                    scale: 1
+                socHighLimitHysteresis:
+                  value:
+                    float-field-type: mapped
+                    source-type: analog
+                    index: 27
+                    scale: 1
+                socLimitCtl:
+                  value:
+                    bool-field-type: mapped
+                    source-type: none
+                    index: 0
+                socLowLimit:
+                  value:
+                    float-field-type: mapped
+                    source-type: analog
+                    index: 26
+                    scale: 1
+                socLowLimitHysteresis:
+                  value:
+                    float-field-type: mapped
+                    source-type: analog
+                    index: 28
+                    scale: 1
+              socManagement:
+                socDeadBandMinus:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                socDeadBandPlus:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                socManagementCtl:
+                  value:
+                    bool-field-type: mapped
+                    source-type: none
+                    index: 0
+                socPowerSetPoint:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+                socSetPoint:
+                  value:
+                    float-field-type: mapped
+                    source-type: none
+                    index: 0
+                    scale: 1
+              voltageDroop:
+                voltageDroopCtl:
+                  value:
+                    bool-field-type: mapped
+                    source-type: none
+                    index: 0
+                voltageRegulation:
+                  overVoltageDroop:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+                  underVoltageDroop:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+                  voltageDeadBandMinus:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+                  voltageDeadBandPlus:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+                  voltageSetPoint:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+              voltagePI:
+                voltagePICtl:
+                  value:
+                    bool-field-type: mapped
+                    source-type: none
+                    index: 0
+                voltageRegulation:
+                  overVoltageDroop:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+                  underVoltageDroop:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+                  voltageDeadBandMinus:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+                  voltageDeadBandPlus:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+                  voltageSetPoint:
+                    value:
+                      float-field-type: mapped
+                      source-type: none
+                      index: 0
+                      scale: 1
+            mode:
+              setVal:
+                enum-field-type: mapped
+                source-type: analog
+                index: 24
+                mapping:
+                - name: GridConnectModeKind_VSI_PQ
+                  value: 1
+                - name: GridConnectModeKind_VSI_VF
+                  value: 2001
+                - name: GridConnectModeKind_VSI_ISO
+                  value: 0
+              setValExtension:
+                value:
+                  string-field-type: ignored
+            pctHzDroop:
+              value:
+                float-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            pctVDroop:
+              value:
+                float-field-type: mapped
+                source-type: none
+                index: 0
+                scale: 1
+            rampRates:
+              negativeReactivePowerKVArPerMin:
+                value:
+                  float-field-type: mapped
+                  source-type: none
+                  index: 0
+                  scale: 1
+              negativeRealPowerKWPerMin:
+                value:
+                  float-field-type: mapped
+                  source-type: none
+                  index: 0
+                  scale: 1
+              positiveReactivePowerKVArPerMin:
+                value:
+                  float-field-type: mapped
+                  source-type: none
+                  index: 0
+                  scale: 1
+              positiveRealPowerKWPerMin:
+                value:
+                  float-field-type: mapped
+                  source-type: none
+                  index: 0
+                  scale: 1
+            reactivePwrSetPointEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            realPwrSetPointEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            state:
+              value:
+                enum-field-type: mapped
+                source-type: analog
+                index: 23
+                mapping:
+                - name: StateKind_off
+                  value: 0
+                - name: StateKind_on
+                  value: 1
+                - name: StateKind_standby
+                  value: 2
+            syncBackToGrid:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            transToIslndOnGridLossEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+            voltageSetPointEnabled:
+              q:
+                quality-field-type: ignored
+              stVal:
+                enum-field-type: ignored
+              t:
+                timestamp-field-type: ignored
+    ied:
+      identifiedObject:
+        description:
+          value:
+            string-field-type: ignored
+        mRID:
+          value:
+            string-field-type: ignored
+        name:
+          value:
+            string-field-type: ignored
+- name: ESSControlProfile
+  command-order:
+  - set-state-on
+  - set-state-off
+  - synchro-check-on
+  - synchro-check-off
+  - set-mode-csi
+  - set-mode-vsi-pq
+  - set-mode-vsi-vf
+  - set-mode-vsi-iso
+  - set-w-net-mag
+  - set-var-net-mag
+  - set-hz-mag
+  - set-phv-net-mag
+  - set-soc-high-limit
+  - set-soc-low-limit
+  - set-soc-high-hysteresis
+  - set-soc-low-hysteresis
+  tolerance-ms: 5000
+  mapping:
+    controlMessageInfo:
+      messageInfo:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: generated_uuid
+          name:
+            value:
+              string-field-type: ignored
+        messageTimeStamp:
+          timestamp-field-type: message
+    ess:
+      conductingEquipment:
+        namedObject:
+          description:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: constant
+              value: '?'
+        mRID:
+          string-field-type: primary_uuid
+          value: 00000000-0000-0000-0000-000000000000
+    essControl:
+      controlValue:
+        identifiedObject:
+          description:
+            value:
+              string-field-type: ignored
+          mRID:
+            value:
+              string-field-type: ignored
+          name:
+            value:
+              string-field-type: ignored
+        modBlk:
+          value:
+            bool-field-type: ignored
+        reset:
+          value:
+            bool-field-type: ignored
+            when-true: []            
+            when-false: []            
+      check:
+        interlockCheck:
+          value:
+            bool-field-type: ignored
+        synchroCheck:
+          value:
+            bool-field-type: mapped
+            when-true:
+            - command-action-type: g41v1
+              index: 1
+              command-id: synchro-check-on
+              value: 1
+            when-false:
+            - command-action-type: g41v1
+              index: 1
+              command-id: synchro-check-off
+              value: 0
+      essControlFSCC:
+        controlFSCC:
+          logicalNodeForControl:
+            logicalNode:
+              identifiedObject:
+                description:
+                  value:
+                    string-field-type: ignored
+                mRID:
+                  value:
+                    string-field-type: ignored
+                name:
+                  value:
+                    string-field-type: ignored
+          controlScheduleFSCH:
+            ValACSG:
+              schpts:
+              - scheduleParameter:
+                - scheduleParameterType: ScheduleParameterKind_VAr_net_mag
+                  outputs:
+                  - command-id: set-var-net-mag
+                    command-action-type: g41v1
+                    index: 4
+                    scale: 1
+                - scheduleParameterType: ScheduleParameterKind_W_net_mag
+                  outputs:
+                  - command-id: set-w-net-mag
+                    command-action-type: g41v1
+                    index: 3
+                    scale: 1
+                - scheduleParameterType: ScheduleParameterKind_Hz_mag
+                  outputs:
+                  - command-id: set-hz-mag
+                    command-action-type: g41v1
+                    index: 5
+                    scale: 1
+                - scheduleParameterType: ScheduleParameterKind_PhV_net_ang
+                  outputs:
+                  - command-id: set-phv-net-mag
+                    command-action-type: g41v1
+                    index: 6
+                    scale: 1
+                startTime:
+                  control-timestamp-field-type: ignored
+          islandControlScheduleFSCH:
+            ValACSG:
+              schpts: []
+        essControlScheduleFSCH:
+          ValDCSG:
+            crvpts:
+            - blackStartEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              frequencySetPointEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              function:
+                capacityFirming:
+                  capacityFirmingCtl:
+                    value:
+                      bool-field-type: ignored
+                  limitNegative_dp_dt:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  limitPositive_dp_dt:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                frequencyRegulation:
+                  frequencyDeadBandMinus:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  frequencyDeadBandPlus:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  frequencyRegulationCtl:
+                    value:
+                      bool-field-type: ignored
+                  frequencySetPoint:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  gridFrequencyStableBandMinus:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  gridFrequencyStableBandPlus:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  overFrequencyDroop:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  underFrequencyDroop:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                peakShaving:
+                  baseShavingLimit:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  peakShavingCtl:
+                    value:
+                      bool-field-type: ignored
+                  peakShavingLimit:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  socManagementAllowedHighLimit:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  socManagementAllowedLowLimit:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                socLimit:
+                  socHighLimit:
+                    value:
+                      float-field-type: mapped
+                      outputs:
+                      - command-id: set-soc-high-limit
+                        command-action-type: g41v1
+                        index: 7
+                        scale: 1
+                  socHighLimitHysteresis:
+                    value:
+                      float-field-type: mapped
+                      outputs:
+                      - command-id: set-soc-high-hysteresis
+                        command-action-type: g41v1
+                        index: 9
+                        scale: 1
+                  socLimitCtl:
+                    value:
+                      bool-field-type: ignored
+                  socLowLimit:
+                    value:
+                      float-field-type: mapped
+                      outputs:
+                      - command-id: set-soc-low-limit
+                        command-action-type: g41v1
+                        index: 8
+                        scale: 1
+                  socLowLimitHysteresis:
+                    value:
+                      float-field-type: mapped
+                      outputs:
+                      - command-id: set-soc-low-hysteresis
+                        command-action-type: g41v1
+                        index: 10
+                        scale: 1
+                socManagement:
+                  socDeadBandMinus:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  socDeadBandPlus:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  socManagementCtl:
+                    value:
+                      bool-field-type: ignored
+                  socPowerSetPoint:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                  socSetPoint:
+                    value:
+                      float-field-type: ignored
+                      outputs:
+                      - command-id: some-command-id
+                        command-action-type: g41v1
+                        index: 0
+                        scale: 1
+                voltageDroop:
+                  voltageDroopCtl:
+                    value:
+                      bool-field-type: ignored
+                  voltageRegulation:
+                    overVoltageDroop:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                    underVoltageDroop:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                    voltageDeadBandMinus:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                    voltageDeadBandPlus:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                    voltageSetPoint:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                voltagePI:
+                  voltagePICtl:
+                    value:
+                      bool-field-type: ignored
+                  voltageRegulation:
+                    overVoltageDroop:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                    underVoltageDroop:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                    voltageDeadBandMinus:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                    voltageDeadBandPlus:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+                    voltageSetPoint:
+                      value:
+                        float-field-type: ignored
+                        outputs:
+                        - command-id: some-command-id
+                          command-action-type: g41v1
+                          index: 0
+                          scale: 1
+              mode:
+                setVal:
+                  enum-field-type: mapped
+                  mapping:
+                  - name: GridConnectModeKind_VSI_PQ
+                    outputs:
+                    - command-action-type: g41v1
+                      index: 2
+                      command-id: set-mode-vsi-pq
+                      value: 1
+                      count: 1
+                      on-time-ms: 1000
+                      off-time-ms: 1000
+                  - name: GridConnectModeKind_VSI_VF
+                    outputs:
+                    - command-action-type: g41v1
+                      index: 2
+                      command-id: set-mode-vsi-vf
+                      value: 2001
+                      count: 1
+                      on-time-ms: 1000
+                      off-time-ms: 1000
+                  - name: GridConnectModeKind_VSI_ISO
+                    outputs:
+                    - command-action-type: g41v1
+                      index: 2
+                      command-id: set-mode-vsi-iso
+                      value: 0
+                      count: 1
+                      on-time-ms: 1000
+                      off-time-ms: 1000
+                setValExtension:
+                  value:
+                    string-field-type: ignored
+              pctHzDroop:
+                value:
+                  float-field-type: ignored
+                  outputs:
+                  - command-id: some-command-id
+                    command-action-type: g41v1
+                    index: 0
+                    scale: 1
+              pctVDroop:
+                value:
+                  float-field-type: ignored
+                  outputs:
+                  - command-id: some-command-id
+                    command-action-type: g41v1
+                    index: 0
+                    scale: 1
+              rampRates:
+                negativeReactivePowerKVArPerMin:
+                  value:
+                    float-field-type: ignored
+                    outputs:
+                    - command-id: some-command-id
+                      command-action-type: g41v1
+                      index: 0
+                      scale: 1
+                negativeRealPowerKWPerMin:
+                  value:
+                    float-field-type: ignored
+                    outputs:
+                    - command-id: some-command-id
+                      command-action-type: g41v1
+                      index: 0
+                      scale: 1
+                positiveReactivePowerKVArPerMin:
+                  value:
+                    float-field-type: ignored
+                    outputs:
+                    - command-id: some-command-id
+                      command-action-type: g41v1
+                      index: 0
+                      scale: 1
+                positiveRealPowerKWPerMin:
+                  value:
+                    float-field-type: ignored
+                    outputs:
+                    - command-id: some-command-id
+                      command-action-type: g41v1
+                      index: 0
+                      scale: 1
+              reactivePwrSetPointEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              realPwrSetPointEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              reset:
+                ctlVal:
+                  bool-field-type: ignored
+              state:
+                value:
+                  enum-field-type: mapped
+                  mapping:
+                  - name: StateKind_off
+                    outputs:
+                    - command-action-type: g41v1
+                      index: 0
+                      command-id: set-state-off
+                      value: 0
+                  - name: StateKind_on
+                    outputs:
+                    - command-action-type: g41v1
+                      index: 0
+                      command-id: set-state-on
+                      value: 1
+              syncBackToGrid:
+                ctlVal:
+                  bool-field-type: ignored
+              transToIslndOnGridLossEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              voltageSetPointEnabled:
+                ctlVal:
+                  bool-field-type: ignored
+              startTime:
+                control-timestamp-field-type: ignored
+    ied:
+      identifiedObject:
+        description:
+          value:
+            string-field-type: ignored
+        mRID:
+          value:
+            string-field-type: ignored
+        name:
+          value:
+            string-field-type: ignored
+...
