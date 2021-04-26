@@ -2,20 +2,18 @@ version: "3.9"
 services:
   nats:
     image: nats
-    network: openfmb
-  solar:
-    image: openfmb.adapters
-    network: openfmb
-  load:
-    image: openfmb.adapters
-    network: openfmb
-  ess:
-    image: openfmb.adapters
-    network: openfmb
-  breaker:
-    image: openfmb.adapters
-    network: openfmb
+    #    networks:
+    #      - openfmb
+  replay:
+    image: oesinc/openfmb.adapters:a008ef9
+    depends_on:
+      - nats
+        #    networks:
+        #      - openfmb
   hmi:
-    image: openfmb.hmi
-    network: openfmb
+    image: oesinc/openfmb.hmi:latest
+    depends_on:
+      - nats
+        #    networks:
+        #      - openfmb
 
