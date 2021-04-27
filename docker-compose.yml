@@ -14,4 +14,8 @@ services:
     depends_on:
       - nats
     volumes:
-      - ./hmi:/hmi_server/config
+      - ./hmi:/cfg
+    environment:
+      APP_CONF: /cfg/config/app.toml
+      APP_DIR_NAME: /cfg
+    ports: [32771]
