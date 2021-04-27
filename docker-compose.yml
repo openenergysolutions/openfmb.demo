@@ -2,6 +2,10 @@ version: "3.9"
 services:
   nats:
     image: nats
+    ports:
+      - "4222:4222"
+    expose:
+      - 4222
   replay:
     image: oesinc/openfmb.adapters:a008ef9
     depends_on:

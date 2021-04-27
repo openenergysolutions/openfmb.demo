@@ -85,6 +85,8 @@ plugins:
       subject: '*'
     - profile: LoadStatusProfile
       subject: '*'
+    - profile: MeterReadingProfile
+      subject: '*'
     subscribe: []
   timescaledb:
     enabled: false

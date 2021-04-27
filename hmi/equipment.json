@@ -1,0 +1,22 @@
+[
+	{
+		"mrid": "0648ef71-cb63-4347-921a-9dbf178da687",
+		"name": "Meter",
+		"deviceType": "meter"
+	},
+	{
+		"mrid": "540b292a-e600-4ae4-b077-40b892ae6970",
+		"name": "Solar",
+		"deviceType": "solar"
+	},
+	{
+		"mrid": "836a8638-b448-4961-8258-47aa18e05f65",
+		"name": "Battery",
+		"deviceType": "ess"
+	},
+	{
+		"mrid": "e6768784-48ad-40e9-af2a-9676413d4d6a",
+		"name": "Switch",
+		"deviceType": "switch"
+	}
+]
