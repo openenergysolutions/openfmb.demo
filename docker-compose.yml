@@ -18,4 +18,7 @@ services:
     environment:
       APP_CONF: /cfg/config/app.toml
       APP_DIR_NAME: /cfg
-    ports: [32771]
+    ports:
+      - "32771:32771"
+    expose:
+      - 32771
