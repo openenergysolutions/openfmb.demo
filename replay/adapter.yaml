@@ -15,10 +15,10 @@ logging:
 plugins:
   capture:
     enabled: false
-    file: capture.txt
+    file: /cfg/capture.txt
   replay:
     enabled: true
-    file: capture.txt
+    file: /cfg/capture.txt
   dnp3-master:
     enabled: false
     thread-pool-size: 1
@@ -61,7 +61,7 @@ plugins:
   nats:
     enabled: true
     max-queued-messages: 100
-    connect-url: nats://192.168.103.155:4222
+    connect-url: nats://nats:4222
     connect-retry-seconds: 5
     security:
       security-type: none
