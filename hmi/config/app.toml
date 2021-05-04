@@ -9,3 +9,5 @@ dev_uri = "nats:4222"
 
 [hmi]
 server_uri = "0.0.0.0:32771"
+server_host = "127.0.0.1"
+server_port = 32771
