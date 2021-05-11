@@ -1,5 +1,6 @@
 #!/bin/sh
 
-docker-compose up
+docker-compose up &
 sleep 5
-xdg-open http://localhost:3000
+xdg-open http://localhost:32771
+fg
